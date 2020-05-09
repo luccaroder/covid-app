@@ -1,47 +1,38 @@
-import moment from 'moment-timezone';
+import { parseISO } from 'date-fns'; 
+import { format } from 'date-fns-tz';
 
-const activeCases = {
-    id: 'Ativos',
-    color: 'hsl(270, 70%, 50%)',
-};
-
-const criticalCases = {
-    id: 'Críticos',
-    color: "hsl(1, 70%, 50%)"
-}
-
-const recoveredCases = {
-    id: 'Recuperados',
+const totalCases = {
+    id: 'Total de casos',
     color: "hsl(348, 70%, 50%)"
 }
 
-const activeCasesResult = (chartInformation) => chartInformation.map((item) => {
-        return {
-            x: moment.parseZone(item.time).format('YYYY-MM-DD HH:mm'),
-            y: item.cases.active
+const onlyUnique = (valueComparable) => {
+    return (item) => { 
+        if (item.total_cases !== valueComparable) {
+            valueComparable = item.total_cases;
+            return item;
         }
-    });
-
-
-const criticalCasesResult = (chartInformation) => chartInformation.map((item) => {
-        return {
-            x: moment.parseZone(item.time).format('YYYY-MM-DD HH:mm'),
-            y: item.cases.critical
-        }
-    });
-
-const recoveredCasesResult = (chartInformation) => chartInformation.map((item) => {
-    return {
-        x: moment.parseZone(item.time).format('YYYY-MM-DD HH:mm'),
-        y: item.cases.recovered
-    }
-});
-
-const buildCovidInformation = (chartInformation) => {
-    activeCases.data = activeCasesResult(chartInformation);
-    criticalCases.data = criticalCasesResult(chartInformation);
-    recoveredCases.data = recoveredCasesResult(chartInformation);
-    return [activeCases, criticalCases, recoveredCases];
+   };
 }
 
-export { buildCovidInformation };
+const total = (chartInformation) => {
+    let initialValue = '0.00';
+    return chartInformation.filter(onlyUnique(initialValue)).reverse();
+};
+
+const totalCasesResult = (cases) => total(cases).map((item) => {
+        const parsedDate = parseISO(item.record_date);
+        const formatDate = format(parsedDate, 'yyyy-MM-dd HH:mm');
+        return {
+            x: formatDate,
+            y: item.total_cases.replace(',','').replace(' ','')
+
+        }
+    });
+
+const BuildTotalInformation = (chartInformation) => {
+    totalCases.data = totalCasesResult(chartInformation);
+    return [totalCases];
+}
+
+export { BuildTotalInformation };

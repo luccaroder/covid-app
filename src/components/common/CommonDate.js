@@ -6,11 +6,11 @@ import {
   DatePicker,
 } from '@material-ui/pickers';
 
-export default function DatePickerStartMonitor({handleDateChange, selectedDate }) {
+export default function CommonDate({handleDateChange, selectedDate }) {
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <DatePicker
+        <DatePicker data-testid="common-date-test-id"
           autoOk
           variant="inline"
           format="dd/MM/yyyy"

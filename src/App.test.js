@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from 'App';
 
-jest.mock('components/covid/Monitor', () => () => 'Monitor') 
+afterEach(cleanup)
 
-test('renders learn react link', () => {
-    const { container } = render(<App/>);
-    expect(container.innerHTML).toEqual('<div class="App">Monitor</div>');
+jest.mock('components/covid/Monitor', () => 'mock-monitor');
+
+test('renders App react component', () => {
+    const { asFragment } = render(<App />)
+    expect(asFragment(<App />)).toMatchSnapshot()
 });

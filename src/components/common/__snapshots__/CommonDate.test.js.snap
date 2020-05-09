@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CommonDate react component 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiFormControl-root MuiTextField-root"
+    data-testid="common-date-test-id"
+    format="dd/MM/yyyy"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiInput-input"
+        readonly=""
+        type="text"
+        value="03/03/2011"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

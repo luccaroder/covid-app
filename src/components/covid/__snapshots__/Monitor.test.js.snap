@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Monitor react component 1`] = `
+<DocumentFragment>
+  <h1>
+    Gráficos mostrando a evolução do Covid-19 no Brasil
+  </h1>
+  <h2>
+    Informe um dia para ver os detalhes dos casos
+  </h2>
+  <div
+    class="makeStyles-root-1"
+  >
+    mock-common-date
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Pesquisar
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+    mock-line-chart
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders LineChart react component 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 400px;"
+  >
+    <responsive-line
+      axisbottom="[object Object]"
+      axisleft="[object Object]"
+      colors="[object Object]"
+      curve="monotoneX"
+      data="[object Object]"
+      legends="[object Object]"
+      margin="[object Object]"
+      pointbordercolor="[object Object]"
+      pointborderwidth="2"
+      pointcolor="white"
+      pointlabel="x"
+      pointlabelyoffset="-12"
+      pointsize="10"
+      usemesh="true"
+      xformat="time:%Hh"
+      xscale="[object Object]"
+      yscale="[object Object]"
+    />
+  </div>
+</DocumentFragment>
+`;

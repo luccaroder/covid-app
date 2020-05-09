@@ -1,7 +1,7 @@
-import apiMonitorResponse from 'fixtures/builders/api/monitor.json'
-import monitorResponse from 'fixtures/builders/monitor.json'
-import { buildCovidInformation } from './monitor';
+import apiMonitorResponse from 'builders/fixtures/api/monitor.json'
+import monitorResponse from 'builders/fixtures/monitor.json'
+import { BuildTotalInformation } from 'builders/monitor';
 
 test('builder chart information .buildCovidInformation', () => {
-  expect(buildCovidInformation(apiMonitorResponse)).toEqual(monitorResponse)
+  expect(BuildTotalInformation(apiMonitorResponse)).toEqual(monitorResponse)
 });
