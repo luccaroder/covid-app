@@ -6,7 +6,7 @@ export default function LineChart(props){
   <div style={{height: 400}}>
     <ResponsiveLine
         data={props.chartInformation}
-        margin={{ top: 50, right: 140, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 50, bottom: 50, left: 60 }}
         curve='monotoneX'
         xScale={{
           type: "time",
@@ -24,7 +24,8 @@ export default function LineChart(props){
             tickPadding: 5,
             tickRotation: 0,
             legendOffset: 36,
-            legendPosition: 'middle'
+            legendPosition: 'middle',
+            tickValues: 'every 5 hours'
         }}
         axisLeft={{
             orient: 'left',
@@ -42,32 +43,32 @@ export default function LineChart(props){
         pointLabel="x"
         pointLabelYOffset={-12}
         useMesh={true}
-        legends={[
-            {
-                anchor: 'bottom-right',
-                direction: 'column',
-                justify: false,
-                itemsSpacing: 0,
-                translateX: 125,
-                translateY: 0,
-                itemDirection: 'left-to-right',
-                itemWidth: 80,
-                itemHeight: 20,
-                itemOpacity: 0.75,
-                symbolSize: 12,
-                symbolShape: 'circle',
-                symbolBorderColor: 'rgba(0, 0, 0, .5)',
-                effects: [
-                    {
-                        on: 'hover',
-                        style: {
-                            itemBackground: 'rgba(0, 0, 0, .03)',
-                            itemOpacity: 1
-                        }
-                    }
-                ]
-            }
-        ]}
+        // legends={[
+        //     {
+        //         anchor: 'bottom-rigth',
+        //         direction: 'column',
+        //         justify: false,
+        //         itemsSpacing: 0,
+        //         translateX: 150,
+        //         translateY: 0,
+        //         itemDirection: 'left-to-right',
+        //         itemWidth: 80,
+        //         itemHeight: 20,
+        //         itemOpacity: 0.75,
+        //         symbolSize: 12,
+        //         symbolShape: 'circle',
+        //         symbolBorderColor: 'rgba(0, 0, 0, .5)',
+        //         effects: [
+        //             {
+        //                 on: 'hover',
+        //                 style: {
+        //                     itemBackground: 'rgba(0, 0, 0, .03)',
+        //                     itemOpacity: 1
+        //                 }
+        //             }
+        //         ]
+        //     }
+        // ]}
     />
   </div>
 )};

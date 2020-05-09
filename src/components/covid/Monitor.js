@@ -42,6 +42,7 @@ export default function Monitor() {
             <Button variant="contained" color="primary" onClick={getCovidCasesData}>
                 Pesquisar
             </Button>
+            <h2>Quantidade x Horas</h2>
             <LineChart chartInformation={chartInformation}/>
         </div>
         </>
