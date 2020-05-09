@@ -26,6 +26,9 @@ exports[`renders Monitor react component 1`] = `
         class="MuiTouchRipple-root"
       />
     </button>
+    <h2>
+      Quantidade x Horas
+    </h2>
     mock-line-chart
   </div>
 </DocumentFragment>
